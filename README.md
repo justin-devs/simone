@@ -11,3 +11,4 @@
 1. Run `php artisan migrate`
 1. Run `php artisan db:seed`
 1. In PhpMyAdmin select the database then the table `genres` and add a sample genre = `blog`
+1. Finally, run `php artisan serve`
