@@ -27,7 +27,7 @@
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ asset('img/blogger.png') }}" alt="" style="width: 40px; height: 40px;" class="img-fluid rounded-circle">
+                    <img src="{{ asset('img/simone.png') }}" alt="" style="height: 50px;" class="img-fluid">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -36,22 +36,21 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <li><a class="nav-link" href="/home">Home</a></li>
-                        <li><a class="nav-link" href="/about">About</a></li>
-                        <li><a class="nav-link" href="/blogs">Blog</a></li>
-                        <li><a class="nav-link" href="/podcasts">Podcasts</a></li>
-                        <li><a class="nav-link" href="/portfolio">Portfolio</a></li>
+                        <li><a class="nav-link {{ Request::is('home') ? 'active' : '' }}" href="/home">Home</a></li>
+                        <li><a class="nav-link {{ Request::is('about') ? 'active' : '' }}" href="/about">About</a></li>
+                        <li><a class="nav-link {{ Request::is('blogs*') ? 'active' : '' }}" href="/blogs">Blog</a></li>
+                        <li><a class="nav-link {{ Request::is('podcasts*') ? 'active' : '' }}" href="/podcasts">Podcasts</a></li>
+                        <li><a class="nav-link {{ Request::is('portfolio') ? 'active' : '' }}" href="/portfolio">Portfolio</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @auth
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> Create new <span class="caret"></span>
-                                </a>
+                                <a id="navbarDropdown" class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>New <i class="fas fa-plus-circle"></i></a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="/blogs/create">
-                                       New blog
+                                       New Blog
                                     </a>
                                     <a class="dropdown-item" href="/tags">
                                         New Tags

@@ -7,9 +7,10 @@
         </div>
         <br>
         <div class="row">
-            <h2>{{$post->title}}</h2>
-            <hr>
-            <div class="jumbotron">
+            <h2 class="mx-auto">{{$post->title}}</h2>
+        </div>
+        <div class="row">
+            <div class="jumbotron mx-auto">
                 <hr>
                     <p>{!! $post->body!!}</p>
                 <hr>
