@@ -3,24 +3,33 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Tag;
+use App\Genre;
 use App\Post;
 
 class PostsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index','show');
+        $this->middleware('auth')->except('index','show', 'podcast');
     }
 
     public function index()
     {
-        $posts = Post::orderBy('created_at', 'desc')->paginate(9);
-        return view('blogs.index')->with('posts', $posts);
+        $genres = Genre::where('type', 'blog')->paginate(9);
+        return view('blogs.index')->with('genres', $genres)->with('title', 'Blog');
+    }
+    public function podcast()
+    {
+        $genres = Genre::where('type', 'podcast')->paginate(9);
+        return view('blogs.index')->with('genres', $genres)->with('title', 'Podcast');
     }
 
     public function create()
     {
-        return view('blogs.create');
+        $genres = Genre::all();
+        $tags = Tag::all();
+        return view('blogs.create')->with('genres', $genres)->with('tags', $tags);
     }
 
     public function store(Request $request)
@@ -32,7 +41,9 @@ class PostsController extends Controller
         $post = new Post;
         $post->title = $request->input('title');
         $post->body = $request->input('body');
+        $post->genre_id = $request->input('genre_id');
         $post->save();
+        $post->tags()->sync($request->tags,false);
 
         return redirect('/blogs')->with('success', 'Post Created!');
 
@@ -48,7 +59,13 @@ class PostsController extends Controller
     public function edit($id)
     {
         $post = Post::find($id);
-        return view('blogs.edit')->with('post', $post);
+        $genres = Genre::all();
+        $tags = Tag::all();
+        $tags2 = [];
+        foreach ($tags as $tag){
+            $tags2[$tag->id] = $tag->name;
+        }
+        return view('blogs.edit')->with('post', $post)->with('genres', $genres)->with('tags', $tags2);
     }
 
     public function update(Request $request, $id)
@@ -61,7 +78,7 @@ class PostsController extends Controller
         $post->title = $request->input('title');
         $post->body = $request->input('body');
         $post->save();
-
+        $post->tags()->sync($request->tags);
         return redirect('/blogs')->with('success', 'Post updated!');
     }
 

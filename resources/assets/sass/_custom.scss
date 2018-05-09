@@ -1,7 +1,9 @@
 .col-sm-4 .card-block{
-  padding: 1.25rem;
+  padding: 1.25rem 1.25rem 0 1.25rem;
   height: 300px;
-  margin-bottom: 20px;
+  p{
+    margin-bottom: 0;
+  }
 }
 .card-block{
   padding: 1.25rem;
@@ -17,4 +19,7 @@
 footer {
   position: absolute;
   bottom: 0;
+}
+.jumbotron{
+  min-width: 80vw;
 }

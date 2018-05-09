@@ -13,6 +13,7 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->mediumText('body');
+            $table->integer('genre_id');
             $table->timestamps();
         });
     }

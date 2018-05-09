@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('styles')
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
 </head>
 <body>
     <div id="app">
@@ -37,18 +39,29 @@
                         <li><a class="nav-link" href="/home">Home</a></li>
                         <li><a class="nav-link" href="/about">About</a></li>
                         <li><a class="nav-link" href="/blogs">Blog</a></li>
+                        <li><a class="nav-link" href="/podcasts">Podcasts</a></li>
                         <li><a class="nav-link" href="/portfolio">Portfolio</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         @auth
-                            <li class="nav-item">
-                                <a href="/blogs/create" class="nav-link">Create</a>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> Create new <span class="caret"></span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/blogs/create">
+                                       New blog
+                                    </a>
+                                    <a class="dropdown-item" href="/tags">
+                                        New Tags
+                                    </a>
+
+                                </div>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ ucwords(Auth::user()->name) }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -75,8 +88,6 @@
         </main>
     </div>
 </body>
-<script src="/vendor/unisharp/laravel-ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace( 'ck' );
-</script>
+@yield('scripts')
+
 </html>

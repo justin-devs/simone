@@ -13,9 +13,11 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'PagesController@index')->name('home');
-Route::get('/about', 'PagesController@about')->name('home');
-Route::get('/portfolio', 'PagesController@portfolio')->name('home');
+Route::get('/about', 'PagesController@about')->name('about');
+Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio');
+Route::get('/podcasts', 'PostsController@podcast')->name('podcast');
 Route::resource('blogs','PostsController');
+Route::resource('tags','TagsController');
 Auth::routes();
 
 

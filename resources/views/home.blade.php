@@ -9,7 +9,7 @@
                 <div class="card-block">
                     <h3 class="card-title"><strong>{{$post[0]['title']}}</strong><small class="text-muted"> created at: {{$post[0]['created_at']}}</small></h3>
                     <hr>
-                    <p class="card-text">    {{$post[0]['body']}}</p>
+                    <p class="card-text">{!! $post[0]['body']!!}</p>
                     <a href="/blogs/{{$post[0]['id']}}" class="btn btn-primary">Show post</a>
                 </div>
             </div>

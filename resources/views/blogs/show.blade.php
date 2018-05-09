@@ -7,12 +7,18 @@
         </div>
         <br>
         <div class="row">
+            <h2>{{$post->title}}</h2>
+            <hr>
             <div class="jumbotron">
-                <h2>{{$post->title}}</h2>
-                <br>
-                <p>{!! $post->body!!}</p>
+                <hr>
+                    <p>{!! $post->body!!}</p>
+                <hr>
+                <h4>
+                    @foreach($post->tags as $tag)
+                        <span class="badge badge-pill badge-dark">{{$tag->name}}</span>
+                    @endforeach
+                </h4>
             </div>
-            </h1>
         </div>
         @auth
             <a href="/blogs/{{$post->id}}/edit" class="btn btn-info">Edit Post</a>
