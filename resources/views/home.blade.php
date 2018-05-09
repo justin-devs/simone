@@ -1,23 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+    <div class="container">
+        <h1 class="text-center">Home page</h1>
+        <hr>
+        <div class="row">
+            <div class="card card-inverse" >
+                <div class="card-block">
+                    <h3 class="card-title"><strong>{{$post[0]['title']}}</strong><small class="text-muted"> created at: {{$post[0]['created_at']}}</small></h3>
+                    <hr>
+                    <p class="card-text">    {{$post[0]['body']}}</p>
+                    <a href="/blogs/{{$post[0]['id']}}" class="btn btn-primary">Show post</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

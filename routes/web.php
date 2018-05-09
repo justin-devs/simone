@@ -13,6 +13,8 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/home', 'PagesController@index')->name('home');
+Route::get('/about', 'PagesController@about')->name('home');
+Route::get('/portfolio', 'PagesController@portfolio')->name('home');
 Route::resource('blogs','PostsController');
 Auth::routes();
 

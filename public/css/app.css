@@ -10412,8 +10412,27 @@ a.text-dark:focus {
   }
 }
 
+.col-sm-4 .card-block {
+  padding: 1.25rem;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
 .card-block {
   padding: 1.25rem;
-  height: 260px;
+}
+
+.card {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  border-bottom: 2px solid rebeccapurple;
+  border-top: 1px solid rebeccapurple;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
 }
 
