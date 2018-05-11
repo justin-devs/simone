@@ -1,5 +1,5 @@
 # Simone Laravel Site
-##TODO
+## TODO
 - TBA
 ## How to run:
 1. git clone <repo>

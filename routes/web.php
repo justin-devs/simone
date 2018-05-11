@@ -18,6 +18,7 @@ Route::get('/portfolio', 'PagesController@portfolio')->name('portfolio');
 Route::get('/podcasts', 'PostsController@podcast')->name('podcast');
 Route::resource('blogs','PostsController');
 Route::resource('tags','TagsController');
+Route::resource('profile','ProfileController');
 Auth::routes();
 
 
