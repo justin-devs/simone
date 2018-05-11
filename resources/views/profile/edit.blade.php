@@ -4,13 +4,17 @@
 @endsection
 @section('content')
     <div class="container">
-        <h2>Edit Post</h2>
+        <h2>Edit Profile</h2>
         {{--{!! Form::open(['action' => ['ProfileController@edit', $profile->id], 'method' => 'PUT']) !!}--}}
-            {{--<div class="form-group">--}}
-                {{--{{Form::label('title', 'Title')}}--}}
-                {{--{{Form::text('title', $post->title, ['class' => 'form-control', 'placeholder' => 'Title...'])}}--}}
+            {{--<div class="form-inline">--}}
+                {{--{{Form::label('name', 'Name')}}--}}
+                {{--{{Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Name'])}}--}}
             {{--</div>--}}
-            {{--<div class="form-group">--}}
+            {{--<div class="form-inline">--}}
+                {{--{{Form::label('surname', 'Surname')}}--}}
+                {{--{{Form::text('surname', $user->name, ['class' => 'form-control', 'placeholder' => 'Name'])}}--}}
+            {{--</div>--}}
+            {{--<div class="form-control">--}}
                 {{--{{Form::label('body', 'Body')}}--}}
                 {{--{{Form::textarea('body', $post->body, ['id' => 'ck','class' => 'form-control', 'placeholder' => 'Body Text'])}}--}}
             {{--</div>--}}
@@ -36,9 +40,5 @@
     <script>
         CKEDITOR.replace( 'ck' );
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="{{asset('js/select2.full.min.js')}}"></script>
-    <script>
-        $('.select2-multi').select2();
-    </script>
+
 @endsection

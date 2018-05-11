@@ -10412,13 +10412,18 @@ a.text-dark:focus {
   }
 }
 
-.col-sm-4 .card-block {
+.col-sm-6 .card-block {
   padding: 1.25rem 1.25rem 0 1.25rem;
-  height: 300px;
+  max-height: 310px;
 }
 
-.col-sm-4 .card-block p {
+.col-sm-6 .card-block p {
   margin-bottom: 0;
+}
+
+.col-sm-6 .card-block hr {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .card-block {
@@ -10427,6 +10432,8 @@ a.text-dark:focus {
 
 .card {
   margin-bottom: 20px;
+  -webkit-box-shadow: 2px 2px 10px grey;
+          box-shadow: 2px 2px 10px grey;
 }
 
 .navbar {
@@ -10445,5 +10452,18 @@ footer {
 
 .nav-link {
   border-radius: 40px;
+}
+
+.social-bar {
+  height: 55px;
+  width: 140px;
+  background-color: #0c5460;
+  border-radius: 10px;
+}
+
+.social-bar i {
+  margin-left: 5px;
+  color: white;
+  padding-top: 5px;
 }
 

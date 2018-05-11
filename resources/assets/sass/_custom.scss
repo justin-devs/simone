@@ -1,8 +1,14 @@
-.col-sm-4 .card-block{
-  padding: 1.25rem 1.25rem 0 1.25rem;
-  height: 300px;
-  p{
-    margin-bottom: 0;
+.col-sm-6 {
+  .card-block {
+    padding: 1.25rem 1.25rem 0 1.25rem;
+    max-height: 310px;
+    p {
+      margin-bottom: 0;
+    }
+    hr{
+      margin-top: 5px;
+      margin-bottom: 5px;
+    }
   }
 }
 .card-block{
@@ -11,6 +17,7 @@
 }
 .card{
   margin-bottom: 20px;
+  box-shadow: 2px 2px 10px grey;
 }
 .navbar{
   border-bottom: 2px solid rebeccapurple;
@@ -26,4 +33,18 @@ footer {
 .nav-link{
   border-radius: 40px;
 
+}
+.social-bar{
+  height: 55px;
+  width: 140px;
+  background-color: #0c5460;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+
+  i{
+    margin-left: 5px;
+    color: white;
+    padding-top: 5px;
+  }
 }

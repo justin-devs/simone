@@ -24,7 +24,25 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="surname" class="col-md-4 col-form-label text-md-right">{{ __('Surname') }}</label>
 
+                            <div class="col-md-6">
+                                <input id="surname" type="text" class="form-control{{ $errors->has('surname') ? ' is-invalid' : '' }}" name="surname" value="{{ old('name') }}" required autofocus>
+
+                                @if ($errors->has('surname'))
+                                    <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('surname') }}</strong>
+                                        </span>
+                                @endif
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group row">
+                            {{Form::file('image', ['class' => 'form-control'])}};
+                        </div>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
@@ -60,7 +78,10 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
-
+                        <div class="form-group row">
+                            {{Form::label('bio', 'Bio')}}
+                            {{Form::textarea('bio', '', ['id' => 'ck','class' => 'form-control', 'placeholder' => 'Bio Text'])}}
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">

@@ -7,5 +7,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'title' => $faker->sentence(),
         'genre_id' => '1',
         'body' => $faker->paragraphs(rand(2, 10), true),
+        'cover_image' => 'placeholder.png'
     ];
 });

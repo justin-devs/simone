@@ -10,6 +10,9 @@
             <h2 class="mx-auto">{{$post->title}}</h2>
         </div>
         <div class="row">
+            <div class="row mx-auto">
+                <img style="max-width: 900px; max-height: 250px;" src="/storage/cover_images/{{$post->cover_image}}" alt="">
+            </div>
             <div class="jumbotron mx-auto">
                 <hr>
                     <p>{!! $post->body!!}</p>

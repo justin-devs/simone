@@ -5,7 +5,7 @@
 @section('content')
     <div class="container">
         <h2>Create Post</h2>
-        {!! Form::open(['action' => 'PostsController@store']) !!}
+        {!! Form::open(['action' => 'PostsController@store', 'enctype' => 'multipart/form-data']) !!}
             <div class="form-group">
                 {{Form::label('title', 'Title')}}
                 {{Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Title...'])}}
@@ -30,6 +30,9 @@
                     @endforeach
                 </select>
             </div>
+        <div class="form-group">
+            {{Form::file('cover_image')}};
+        </div>
         {{Form::submit('Submit', ['class'=> 'btn btn-primary'])}}
         {!! Form::close() !!}
     </div>

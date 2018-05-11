@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ProfileController extends Controller
 {
 
     public function index()
     {
-        return view('profile.index');
+        $user = User::find('1');
+        return view('profile.index')->with('user', $user);
     }
 
 
@@ -21,7 +23,7 @@ class ProfileController extends Controller
 
     public function edit($id)
     {
-        //
+        return view('profile.edit');
     }
 
 
